@@ -1,0 +1,23 @@
+html {
+  width: 100%;
+}
+
+body {
+  width: 100%;
+}
+
+#game-title {
+  text-align: center;
+}
+
+#game-window {
+  width: 80vw;
+  height: 400px;
+  margin: 50px auto;
+  border: 2px solid red;
+}
+
+#environment {
+  width: inherit;
+  height: 400px;
+}

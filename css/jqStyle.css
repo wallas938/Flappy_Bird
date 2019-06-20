@@ -1,0 +1,50 @@
+html {
+  width: 100%;
+}
+
+body {
+  width: 100%;
+}
+
+#game-title {
+  text-align: center;
+}
+
+#game-window {
+  width: 80vw;
+  height: 80vh;
+  margin: 50px auto;
+  border: 2px solid red;
+}
+
+#environment {
+  border: 2px dashed blue;
+  width: inherit;
+  height: inherit;
+}
+
+#bird-movement-space {
+  border: 2px solid yellowgreen;
+  height: 85%;
+  width: 80px;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+
+}
+
+#bird {
+  width: 10px;
+  height: 10px;
+  background-color: green;
+  position: relative;
+}
+
+.fall {
+  animation: fall 1s forwards ease-in;
+}
+
+@keyframes fall {
+  0% { bottom: 0px}
+  100% { bottom: -150px;}
+}
