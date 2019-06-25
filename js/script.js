@@ -1,7 +1,4 @@
-function startGame() {
-  myGameArea.start();
-  console.log('test')
-}
+
 
 var myGameArea = {
   canvas : document.createElement("canvas"),
@@ -20,24 +17,46 @@ var myGameArea = {
 function component(width, height, color, x, y) {
   this.width = width;
   this.height = height;
+  this.speedX = 0;
+  this.speedY = 0;
   this.x = x;
   this.y = y;
-  this.update = function(){
+  this.update = function() {
     ctx = myGameArea.context;
     ctx.fillStyle = color;
     ctx.fillRect(this.x, this.y, this.width, this.height);
   }
+  this.newPos = function() {
+    this.x += this.speedX;
+    this.y += this.speedY;
+  } 
 }
 
 function updateGameArea() {
   myGameArea.clear();
-  myGamePiece.x += 1;
+  myGamePiece.newPos();
   myGamePiece.update();
 }
 
 var myGamePiece;
 
+function moveup() {
+  myGamePiece.speedY -= 1;
+}
+
+function movedown() {
+  myGamePiece.speedY += 1;
+}
+
 function startGame() {
   myGameArea.start();
   myGamePiece = new component(30, 30, "red", 10, 120);
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  startGame()
+
+  document.addEventListener('click', function(e) {
+    moveup()
+  })
+})
