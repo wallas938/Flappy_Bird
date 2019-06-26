@@ -17,7 +17,12 @@ body {
   border: 2px solid red;
 }
 
-#environment {
-  width: inherit;
-  height: 400px;
+#flappy_bird {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+canvas {
+  width: 70%;
 }
