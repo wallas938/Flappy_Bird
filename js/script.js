@@ -25,7 +25,7 @@ var myGameArea = {
 function component(width, height, img_or_color, x, y, type) {
   this.type = type
   this.image = new Image();
-    this.image.src = img_or_color;
+  this.image.src = img_or_color;
   this.width = width;
   this.height = height;
   this.speedX = 0;
@@ -41,8 +41,6 @@ function component(width, height, img_or_color, x, y, type) {
           this.width, this.height);
           if (type == "background") {
             ctx.drawImage(this.image, this.x + this.width, this.y, this.width, this.height);
-          }else if(type == "obstacle"){
-            ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
           }
     }else {
       ctx.fillStyle = img_or_color;
@@ -148,10 +146,10 @@ function losingHandler() {
   }
 }
 
-function startGame() {myBackground = new component(656, 270, "../images/environment_2.jpg", 0, 0, "background");
-  myGamePiece = new component(30, 30, "../images/spaceship.png", 10, 120, "image");
+function startGame() {
+  myBackground = new component(656, 270, "images/environment_2.jpg", 0, 0, "background");
+  myGamePiece = new component(30, 30, "images/spaceship.png", 10, 120, "image");
   myObstacle = new component(10, 200, colors[Math.floor(Math.random()*colors.length+1)], 300, 120, ""); 
-  
   myGameArea.start();
 }
 
